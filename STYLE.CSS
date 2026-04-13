@@ -1,0 +1,274 @@
+/* ================= GLOBAL STYLES ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ================= HEADER ================= */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #131921;
+    color: white;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.search-bar {
+    display: flex;
+    width: 50%;
+}
+
+.search-bar select {
+    padding: 8px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+}
+
+.search-bar button {
+    background: #febd69;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.nav-right {
+    display: flex;
+    gap: 15px;
+}
+
+/* ================= SUB NAV ================= */
+.sub-nav {
+    background: #232f3e;
+    padding: 10px;
+    text-align: center;
+}
+
+.sub-nav a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+/* ================= HERO ================= */
+.hero {
+    height: 80vh;
+    background: linear-gradient(-45deg, #ff6a00, #ee0979, #00c6ff, #0072ff);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0%}
+    50% {background-position: 100%}
+    100% {background-position: 0%}
+}
+
+.hero h1 {
+    font-size: 50px;
+    animation: fadeIn 2s ease;
+}
+
+.hero p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.hero button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* ================= CATEGORIES ================= */
+.categories {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    background: #fff;
+}
+
+.cat {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.cat i {
+    font-size: 30px;
+    color: #ff6a00;
+}
+
+.cat:hover {
+    background: #f3f3f3;
+    transform: scale(1.1);
+}
+
+/* ================= PRODUCTS ================= */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    background: #f3f3f3;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card p {
+    color: #b12704;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.card button {
+    background: #ffd814;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.card button:hover {
+    background: #f7ca00;
+}
+
+/* ================= OFFER BANNER ================= */
+.offer {
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(90deg, #ff6a00, #ee0979);
+    color: white;
+}
+
+.offer button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+
+/* ================= FOOTER ================= */
+.footer-top {
+    background: #37475a;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    background: #232f3e;
+    color: white;
+    padding: 20px;
+}
+
+.footer-content div h4 {
+    margin-bottom: 10px;
+}
+
+.copy {
+    background: #131921;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+    .sub-nav {
+        display: flex;
+        overflow-x: auto;
+    }
+    .sub-nav a {
+        flex: 0 0 auto;
+        margin-right: 10px;
+    }
+    .hero h1 { font-size: 35px; }
+    .hero p { font-size: 16px; }
+}
+
+@media (max-width: 768px) {
+    .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .search-bar {
+        width: 100%;
+        flex-direction: column;
+    }
+    .search-bar input, .search-bar select, .search-bar button {
+        width: 100%;
+        margin-top: 5px;
+    }
+    .nav-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .categories { flex-wrap: wrap; }
+    .cat { width: 45%; margin-bottom: 15px; }
+    .products { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); padding: 20px; }
+    .card img { height: 150px; }
+}
+
+@media (max-width: 480px) {
+    .hero h1 { font-size: 28px; }
+    .hero p { font-size: 14px; }
+    .cat { width: 100%; }
+    .hero button, .card button, .offer button {
+        padding: 15px; font-size: 16px;
+    }
+    .sub-nav { overflow-x: scroll; }
+}
